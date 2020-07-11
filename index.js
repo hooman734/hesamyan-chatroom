@@ -1,7 +1,7 @@
 var express = require('express');
 var socket = require('socket.io');
 var cors = require('cors');
-let port = process.env.port || 4444;
+let port = process.env.PORT || 4444;
 
 // App setup
 var app = express();
@@ -21,7 +21,7 @@ app.use('/api/chat', (_, res)=>{
 });
 
 var server = app.listen(port, ()=>{
-	console.log('Listening to requests on port 4444');
+	console.log(`Listening to requests on port ${port}`);
 });
 
 
