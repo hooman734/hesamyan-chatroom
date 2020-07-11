@@ -1,6 +1,8 @@
 # hesamyan-chatroom
+[Test it!](https://hesamyan-chat.herokuapp.com/api/chat)
 
 #### It is a basic chatroom application using JavaScript and Socket.io
+
 -------------------------
 ### Dependencies
 + `Socket.io`
