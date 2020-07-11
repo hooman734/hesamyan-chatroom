@@ -62,4 +62,7 @@ socket.on('chat', (data) => {
 
 socket.on('typing', (data) => {
     feedback.innerHTML = '<p><em>' + data + ' is typing...</em></p>';
+    setTimeout(() => {
+        feedback.innerHTML = "";
+    }, 2000);
 });
