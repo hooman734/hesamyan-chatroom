@@ -1,7 +1,7 @@
 // Make connection
 
-var socket = io.connect('http://localhost:4444/');
-
+var socket = io.connect('https://hesamyan-chat.herokuapp.com/);
+// var socket = io.connect('http://localhost:4444/');
 
 // Query DOM
 var message = document.getElementById('message');
