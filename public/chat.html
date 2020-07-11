@@ -9,13 +9,17 @@
 </head>
 <body>
     <h1><span class="badge badge-secondary">Hesamyan Family Chatroom.</span></h1>
-    <div class="input-group sd-3"  id="hesamyan-chat">
-        <div class="input-group sd-3" id="chat-window">
-            <textarea class="form-control" aria-label="With textarea" id="output" readonly=true rows="15"></textarea>
+
+    <div class="container-fluid h-100" id="hesamyan-chat">
+        <div class="col-md-11 col-xl-10 chat" id="chat-window">
+            <div class="container-fluid col-xs-12" id="output"></div>
+            <hr />
+            <div class="container-fluid col-xs-10" id="feedback"></div>
         </div>
-        <div class="input-group sd-3">
-            <div class="input-group-append" id="feedback"></div>
-        </div>
+        
+    </div>
+
+    <div class="input-group col-xs-1"  id="hesamyan-chat">
         <div class="input-group-prepend">
             <input type="text" id="user" placeholder="User name">
         </div>

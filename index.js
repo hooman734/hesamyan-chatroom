@@ -16,11 +16,11 @@ app.use('/:var(|api)?', express.static('public'));
 
 
 // Route to chat 
-app.use('/api/chat', (_, res)=>{
+app.use('/api/chat', (_, res) => {
 	res.sendFile('/public/chat.html', {root: __dirname});
 });
 
-var server = app.listen(port, ()=>{
+var server = app.listen(port, () => {
 	console.log(`Listening to requests on port ${port}`);
 });
 
@@ -28,14 +28,14 @@ var server = app.listen(port, ()=>{
 // Socket setup
 var io = socket(server);
 
-io.on('connection', (socket)=>{
+io.on('connection', (socket) => {
 	console.log('made socket connection', socket.id);
 
-	socket.on('chat', (data)=>{
+	socket.on('chat', (data) => {
 		io.sockets.emit('chat', data);
 	});
 
-	socket.on('typing', (data)=>{
+	socket.on('typing', (data) => {
 		socket.broadcast.emit('typing', data);
 	});
 });
