@@ -13,20 +13,20 @@ var message = document.getElementById('message');
 
 // Emit events
 btn.addEventListener('click', ()=>{
-    message.value = '';
     socket.emit('chat', {
         user: user.value,
         message: message.value
     });
+    message.value = '';
 });
 
 message.addEventListener("keyup", (event)=>{
     if (event.key === "Enter") {
-        message.value = '';
         socket.emit('chat', {
             user: user.value,
             message: message.value
         });
+        message.value = '';
     }
 });
 
