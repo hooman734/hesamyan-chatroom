@@ -29,6 +29,7 @@ message.addEventListener("keyup", (event)=>{
 });
 
 message.addEventListener('keypress', ()=>{
+    feedback.innerHTML = '';
     socket.emit('typing', user.value);
 });
 
