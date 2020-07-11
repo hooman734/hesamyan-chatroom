@@ -1,9 +1,14 @@
 var express = require('express');
 var socket = require('socket.io');
+var cors = require('cors');
 
 
 // App setup
 var app = express();
+
+
+// Setup CORS
+app.use(cors());
 
 
 // Static files
@@ -12,7 +17,7 @@ app.use('/:var(|api)?', express.static('public'));
 
 // Route to chat 
 app.use('/api/chat', (_, res)=>{
-	res.sendFile('/front-end/chat.html', {root: __dirname});
+	res.sendFile('/public/chat.html', {root: __dirname});
 });
 
 var server = app.listen(4444, ()=>{
@@ -36,3 +41,4 @@ io.on('connection', (socket)=>{
 });
 
 
+app.options('*', cors());
